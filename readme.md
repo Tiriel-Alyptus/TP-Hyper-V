@@ -1,8 +1,29 @@
 Par **DECAUDIN Lorenzo** & **MAGALHAES Dylan**
+24/11/2023 - v1 - 17h34
+Ce document n'est soumise à aucune license de droit.
 
-# Création de Machines Virtuelles
+![Watermark](/assets/Watermark/Wolfy-Tiriel.png)
+# Sommaire :
+[Installer le rôle Hyper-V sur un serveur Windows](#installez-le-rôle-hyper-v-sur-un-serveur-windows)
+[Création de Machines Virtuelles](#création-de-machines-virtuelles)
+[Gestion des Machines Virtuelles](#gestion-des-machines-virtuelles)
+[Différence entre arrêter et mettre en pause une VM..](#différence-entre-arrêter-et-mettre-en-pause-une-vm)
+[Quels paramètres peuvent être modifiés en cours d'exécution ?](#quels-paramètres-peuvent-être-modifiés-en-cours-d'exécution-?)
+[Clonez une machine virtuelle existante.](#clonez-une-machine-virtuelle-existante)
+[Exportez une machine virtuelle vers un autre emplacement.](#exportez-une-machine-virtuelle-vers-un-autre-emplacement)
+[Déplacer une VM avec la migration dynamique](#déplacer-une-vm-avec-la-migration-dynamique)
+[Snapshots et Sauvegardes](#snapshots-et-sauvegardes)
+[Créez un snapshot de la machine virtuelle.](#créez-un-snapshot-de-la-machine-virtuelle)
+[Revenez à un état précédent en utilisant le snapshot](#revenez-à-un-état-précédent-en-utilisant-le-snapshot)
+[Configurez une tâche de sauvegarde pour la machine virtuelle.](#configurez-une-tâche-de-sauvegarde-pour-la-machine-virtuelle)
+[Réseau Virtuel](#réseau-virtuel)
+[Configurez un commutateur virtuel](#configurez-un-commutateur-virtuel)
+[Attachez la machine virtuelle à différents réseaux virtuels.](#attachez-la-machine-virtuelle-à-différents-réseaux-virtuels)
+[Testez la connectivité](#testez-la-connectivité)
+[Surveillance et Gestion à Distance](#surveillance-et-gestion-à-distance)
+[Configurez l'accès à distance à Hyper-V Manager à partir d'un autre ordinateur ou Hyper-V.](#configurez-l'accès-à-distance-à-hyper-v-manager-à-partir-d'un-autre-ordinateur-ou-hyper-v)
 
-### Installez le rôle Hyper-V sur un serveur Windows.
+# Installez le rôle Hyper-V sur un serveur Windows.
 **Accéder au "Gestionnaire de serveur"**
 ![1](/assets/0-Installation%20Hyper-V/1.png)
 
@@ -249,6 +270,88 @@ Par **DECAUDIN Lorenzo** & **MAGALHAES Dylan**
 ![7-3](/assets/Gestion%20des%20Machines%20Virtuelles/Revenez%20à%20un%20état%20précédent%20en%20utilisant%20le%20snapshot/7-3.png)
 
 # Configurez une tâche de sauvegarde pour la machine virtuelle.
+
+**Dans le Gestionnaire de serveur, retournez à nouveaux dans la fonction d'ajout de rôle & fonctionnalités et allez jusqu'à l'onglet *"Fonctionnalités"*, dans la liste cochez *"Sauvegardes Windows Server"*.**
 ![8-1](/assets/Gestion%20des%20Machines%20Virtuelles/Configurez%20une%20tâche%20de%20sauvegarde%20pour%20la%20machine%20virtuelle/8-1.png)
+![8-2](/assets/Gestion%20des%20Machines%20Virtuelles/Configurez%20une%20tâche%20de%20sauvegarde%20pour%20la%20machine%20virtuelle/8-2.png)
+
+**Ouvrez ensuite *"Windows Server Backup".**
+![8-3](/assets/Gestion%20des%20Machines%20Virtuelles/Configurez%20une%20tâche%20de%20sauvegarde%20pour%20la%20machine%20virtuelle/8-3.png)
+
+**En haut à gauche, cliquez sur *"Planification de sauvegarde"*.**
+![8-4](/assets/Gestion%20des%20Machines%20Virtuelles/Configurez%20une%20tâche%20de%20sauvegarde%20pour%20la%20machine%20virtuelle/8-4.png)
+
+**Cliquez sur *"Personnalisé"*.**
+![8-5](/assets/Gestion%20des%20Machines%20Virtuelles/Configurez%20une%20tâche%20de%20sauvegarde%20pour%20la%20machine%20virtuelle/8-5.png)
+
+**Sélectionnez la VM que vous souhaitez sauvegarder.**
+![8-6](/assets/Gestion%20des%20Machines%20Virtuelles/Configurez%20une%20tâche%20de%20sauvegarde%20pour%20la%20machine%20virtuelle/8-6.png)
+
+**Dans notre cas nous allons sauvegarder la VM sur un dossier partagé se situant sur notre autre Hyperviseur, afin de pouvoir la restaurer sur celui-ci en cas de corruption de notre Hyperviseur principal.**
+**Nous cochons donc *"Sauvegarde sur un dossier réseau partagé"**
+![8-7](/assets/Gestion%20des%20Machines%20Virtuelles/Configurez%20une%20tâche%20de%20sauvegarde%20pour%20la%20machine%20virtuelle/8-7.png)
+
+**Nous allons ensuite sélectionner le dossier partagé sur notre autre Hyperviseur.**
+![8-8](/assets/Gestion%20des%20Machines%20Virtuelles/Configurez%20une%20tâche%20de%20sauvegarde%20pour%20la%20machine%20virtuelle/8-8.png)
+
+**Résumé de notre action.**
+![8-9](/assets/Gestion%20des%20Machines%20Virtuelles/Configurez%20une%20tâche%20de%20sauvegarde%20pour%20la%20machine%20virtuelle/8-9.png)
+
+**La sauvegarde planifiée est configurée.**
+![8-10](/assets/Gestion%20des%20Machines%20Virtuelles/Configurez%20une%20tâche%20de%20sauvegarde%20pour%20la%20machine%20virtuelle/8-10.png)
+![8-11](/assets/Gestion%20des%20Machines%20Virtuelles/Configurez%20une%20tâche%20de%20sauvegarde%20pour%20la%20machine%20virtuelle/8-11.png)
+
+# Réseau Virtuel
+## Configurez un commutateur virtuel
+### Ajouter un réseau sur VMWARE
+Nous allons ajouter le réseau *"192.168.50.0"*.
+![9-1](/assets/Gestion%20des%20Machines%20Virtuelles/Partie%20réseau/Ajouter%20un%20réseau%20sur%20VMWARE/9-1.png)
+![9-2](/assets/Gestion%20des%20Machines%20Virtuelles/Partie%20réseau/Ajouter%20un%20réseau%20sur%20VMWARE/9-2.png)
+![9-3](/assets/Gestion%20des%20Machines%20Virtuelles/Partie%20réseau/Ajouter%20un%20réseau%20sur%20VMWARE/9-3.png)
 
 
+### Attacher un réseau via un commutateur virtuell a l'HyperV
+**Maintenant que le réseau est crée, nous allons l'attacher via un nouveau commutateur virtuel *"Virtual Switch 2"*.**
+![10-1](/assets/Gestion%20des%20Machines%20Virtuelles/Partie%20réseau/Attacher%20un%20réseau%20a%20l'HyperV/10-1.png)
+![10-2](/assets/Gestion%20des%20Machines%20Virtuelles/Partie%20réseau/Attacher%20un%20réseau%20a%20l'HyperV/10-2.png)
+![10-3](/assets/Gestion%20des%20Machines%20Virtuelles/Partie%20réseau/Attacher%20un%20réseau%20a%20l'HyperV/10-3.png)
+
+## Attachez la machine virtuelle à différents réseaux virtuels.
+**Retourner sur l'interface *"Gestionnaire Hyper-V"*, faites un clic-droit sur la VM sur laquel vous souhaitez attacher une nouvelle carte réseaux et cliquez sur *"Paramètre"*.**
+![11-1](/assets/Gestion%20des%20Machines%20Virtuelles/Partie%20réseau/Attacher%20une%20carte%20réseau%20a%20la%20VM/11-1.png)
+
+**Cliquer sur *"Ajouter un appareil"* et selectionner *"Carte réseau"*.**
+![11-2](/assets/Gestion%20des%20Machines%20Virtuelles/Partie%20réseau/Attacher%20une%20carte%20réseau%20a%20la%20VM/11-2.png)
+
+**Cliquer sur *"Ajouter"*.**
+![11-3](/assets/Gestion%20des%20Machines%20Virtuelles/Partie%20réseau/Attacher%20une%20carte%20réseau%20a%20la%20VM/11-3.png)
+
+**Selectionner le commutateur virtuel que vous souhaitez utiliser puis cliquez sur *"Appliquer"*.**
+![11-4](/assets/Gestion%20des%20Machines%20Virtuelles/Partie%20réseau/Attacher%20une%20carte%20réseau%20a%20la%20VM/11-4.png)
+
+## Testez la connectivité
+**Vous pouvez voir que la carte réseau a bien été ajoutée.**
+
+![11-5](/assets/Gestion%20des%20Machines%20Virtuelles/Partie%20réseau/Attacher%20une%20carte%20réseau%20a%20la%20VM/11-5.png)
+
+**On effectue un ping depuis un autre VM vers cette VM.**
+![12-1](/assets/Gestion%20des%20Machines%20Virtuelles/Partie%20réseau/Testez%20la%20connectivité/12-1.png)
+
+## Surveillance et Gestion à Distance
+
+### Utilisez Hyper-V Manager pour surveiller les ressources de la machine virtuelle
+**On peux surveiller les métriques sur l'interface en temps réel, pour pousser la gestion on peux utiliser des outils comme [PRTG](https://www.paessler.com/fr/network_monitoring_tool).**
+![12-1](/assets/Gestion%20des%20Machines%20Virtuelles/Surveillance%20et%20Gestion%20à%20Distance/Utilisez%20Hyper-V%20Manager%20pour%20surveiller%20les%20ressources%20de%20la%20machine%20virtuelle/13-1.png)
+
+## Configurez l'accès à distance à Hyper-V Manager à partir d'un autre ordinateur ou Hyper-V.
+
+**Sur l'ordinateur distant, ouvrez le "Gestionnaire Hyper-V" puis faites un clic-droit sur *"Gestionnaire Hyper-V"* et cliquez sur *"Se connecter au serveur"*.**
+![13-1](/assets/Gestion%20des%20Machines%20Virtuelles/Surveillance%20et%20Gestion%20à%20Distance/Se%20connecter%20à%20distance%20a%20Hyper-V/13-1.png)
+
+**Nos deux Hyperviseur sont dans un domaine, donc nous pouvons selectionner l'autre Hyperviseur dans la liste des ordinateurs disponibles**
+![13-2](/assets/Gestion%20des%20Machines%20Virtuelles/Surveillance%20et%20Gestion%20à%20Distance/Se%20connecter%20à%20distance%20a%20Hyper-V/13-2.png)
+![13-3](/assets/Gestion%20des%20Machines%20Virtuelles/Surveillance%20et%20Gestion%20à%20Distance/Se%20connecter%20à%20distance%20a%20Hyper-V/13-3.png)
+![13-4](/assets/Gestion%20des%20Machines%20Virtuelles/Surveillance%20et%20Gestion%20à%20Distance/Se%20connecter%20à%20distance%20a%20Hyper-V/13-4.png)
+
+**Vous pouvez désormais gérer vos deux Hyperviseur dont 1 à distance sur votre Gestionnaire Hyper-V**
+![13-5](/assets/Gestion%20des%20Machines%20Virtuelles/Surveillance%20et%20Gestion%20à%20Distance/Se%20connecter%20à%20distance%20a%20Hyper-V/13-5.png)
