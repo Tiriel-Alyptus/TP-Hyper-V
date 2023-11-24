@@ -4,7 +4,7 @@ Par **DECAUDIN Lorenzo** & **MAGALHAES Dylan**
 -
 Ce document n'est soumise à aucune license de droit.
 
-![Watermark](/assets/Watermark/Wolfy-Tiriel.png?raw=true)
+![Watermark](https://github.com/Tiriel-Alyptus/TP-Hyper-V/blob/main/assets/Watermark/Wolfy-Tiriel.png?raw=true)
 
 # Sommaire :
 [Installer le rôle Hyper-V sur un serveur Windows](#installez-le-rôle-hyper-v-sur-un-serveur-windows)
