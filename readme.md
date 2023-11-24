@@ -49,7 +49,7 @@ Ce document n'est soumise à aucune license de droit.
 ![1](https://github.com/Tiriel-Alyptus/TP-Hyper-V/blob/main/assets/0-Installation%20Hyper-V/1.png?raw=true)
 
 **Cliquer sur l'onglet "Gérer", puis sur "Ajouter des rôles & fonctionnalités".**
-![2](/assets/0-Installation%20Hyper-V/2.png)
+![2](https://github.com/Tiriel-Alyptus/TP-Hyper-V/blob/main/assets/0-Installation%20Hyper-V/2.png?raw=true)
 
 **Cliquer sur "Suivant" jusqu'à arriver à l'onglet "Type d'installation".**
 ![3](/assets/0-Installation%20Hyper-V/3.png)
