@@ -8,21 +8,37 @@ Ce document n'est soumise à aucune license de droit.
 [Installer le rôle Hyper-V sur un serveur Windows](#installez-le-rôle-hyper-v-sur-un-serveur-windows)
 
 [Création de Machines Virtuelles](#création-de-machines-virtuelles)
+
 [Gestion des Machines Virtuelles](#gestion-des-machines-virtuelles)
+
 [Différence entre arrêter et mettre en pause une VM..](#différence-entre-arrêter-et-mettre-en-pause-une-vm)
+
 [Quels paramètres peuvent être modifiés en cours d'exécution ?](#quels-paramètres-peuvent-être-modifiés-en-cours-d'exécution-?)
+
 [Clonez une machine virtuelle existante.](#clonez-une-machine-virtuelle-existante)
+
 [Exportez une machine virtuelle vers un autre emplacement.](#exportez-une-machine-virtuelle-vers-un-autre-emplacement)
+
 [Déplacer une VM avec la migration dynamique](#déplacer-une-vm-avec-la-migration-dynamique)
+
 [Snapshots et Sauvegardes](#snapshots-et-sauvegardes)
+
 [Créez un snapshot de la machine virtuelle.](#créez-un-snapshot-de-la-machine-virtuelle)
+
 [Revenez à un état précédent en utilisant le snapshot](#revenez-à-un-état-précédent-en-utilisant-le-snapshot)
+
 [Configurez une tâche de sauvegarde pour la machine virtuelle.](#configurez-une-tâche-de-sauvegarde-pour-la-machine-virtuelle)
+
 [Réseau Virtuel](#réseau-virtuel)
+
 [Configurez un commutateur virtuel](#configurez-un-commutateur-virtuel)
+
 [Attachez la machine virtuelle à différents réseaux virtuels.](#attachez-la-machine-virtuelle-à-différents-réseaux-virtuels)
+
 [Testez la connectivité](#testez-la-connectivité)
+
 [Surveillance et Gestion à Distance](#surveillance-et-gestion-à-distance)
+
 [Configurez l'accès à distance à Hyper-V Manager à partir d'un autre ordinateur ou Hyper-V.](#configurez-l'accès-à-distance-à-hyper-v-manager-à-partir-d'un-autre-ordinateur-ou-hyper-v)
 
 # Installez le rôle Hyper-V sur un serveur Windows.
