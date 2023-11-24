@@ -3,8 +3,10 @@ Par **DECAUDIN Lorenzo** & **MAGALHAES Dylan**
 Ce document n'est soumise à aucune license de droit.
 
 ![Watermark](/assets/Watermark/Wolfy-Tiriel.png)
+
 # Sommaire :
 [Installer le rôle Hyper-V sur un serveur Windows](#installez-le-rôle-hyper-v-sur-un-serveur-windows)
+
 [Création de Machines Virtuelles](#création-de-machines-virtuelles)
 [Gestion des Machines Virtuelles](#gestion-des-machines-virtuelles)
 [Différence entre arrêter et mettre en pause une VM..](#différence-entre-arrêter-et-mettre-en-pause-une-vm)
