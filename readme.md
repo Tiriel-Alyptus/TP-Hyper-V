@@ -46,6 +46,7 @@ Ce document n'est soumise à aucune license de droit.
 # Installez le rôle Hyper-V sur un serveur Windows.
 **Accéder au "Gestionnaire de serveur"**
 ![1](https://github.com/Tiriel-Alyptus/TP-Hyper-V/tree/main/assets/0-Installation%20Hyper-V/1.png?raw=true)
+![1](https://github.com/Tiriel-Alyptus/TP-Hyper-V/blob/main/assets/0-Installation%20Hyper-V/1.png?raw=true)
 
 **Cliquer sur l'onglet "Gérer", puis sur "Ajouter des rôles & fonctionnalités".**
 ![2](/assets/0-Installation%20Hyper-V/2.png)
