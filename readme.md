@@ -305,7 +305,7 @@ Ce document n'est soumise à aucune license de droit.
 ![8-5](https://github.com/Tiriel-Alyptus/TP-Hyper-V/blob/main/assets/Gestion%20des%20Machines%20Virtuelles/Configurez%20une%20tâche%20de%20sauvegarde%20pour%20la%20machine%20virtuelle/8-5.png?raw=true)
 
 **Sélectionnez la VM que vous souhaitez sauvegarder.**
-![8-6](https://github.com/Tiriel-Alyptus/TP-Hyper-V/blob/main(/assets/Gestion%20des%20Machines%20Virtuelles/Configurez%20une%20tâche%20de%20sauvegarde%20pour%20la%20machine%20virtuelle/8-6.png?raw=true)
+![8-6](https://github.com/Tiriel-Alyptus/TP-Hyper-V/blob/main/assets/Gestion%20des%20Machines%20Virtuelles/Configurez%20une%20tâche%20de%20sauvegarde%20pour%20la%20machine%20virtuelle/8-6.png?raw=true)
 
 **Dans notre cas nous allons sauvegarder la VM sur un dossier partagé se situant sur notre autre Hyperviseur, afin de pouvoir la restaurer sur celui-ci en cas de corruption de notre Hyperviseur principal.**
 **Nous cochons donc *"Sauvegarde sur un dossier réseau partagé"**
