@@ -131,7 +131,7 @@ Ce document n'est soumise à aucune license de droit.
 **Vous pouvez également modifier la quantité de mémoire RAM, Ajouter un matériel (Disque, Carte réseau, CD, etc..)**
 ![2-12](https://github.com/Tiriel-Alyptus/TP-Hyper-V/blob/main/assets/1-Création%20de%20Machines%20Virtuelles/2-11.png?raw=true)
 **Vous pouvez ensuite démarrer la VM, dans notre cas l'ISO était renseigné donc notre machine démarre sur le disque d'installation de WS2016.**
-![2-13](https://github.com/Tiriel-Alyptus/TP-Hyper-V/blob/main/assets/1-Création%20de%20Machines%20Virtuelles/2-13.png?raw=true)
+![2-13](https://github.com/Tiriel-Alyptus/TP-Hyper-V/blob/main/assets/1-Création%20de%20Machines%20Virtuelles/2-13.png?raw=true)Sélectionnez la VM que vous souhaitez sauvegarder.
 **Vous pouvez ensuite choisir votre version de Windows Server 2016, nous prenons "Experience utilisateur"**
 ![2-14](https://github.com/Tiriel-Alyptus/TP-Hyper-V/blob/main/assets/1-Création%20de%20Machines%20Virtuelles/2-14.png?raw=true)
 **Vous pouvez ensuite choisir votre disque d'installation, nous prenons le disque 0**
@@ -305,7 +305,7 @@ Ce document n'est soumise à aucune license de droit.
 ![8-5](https://github.com/Tiriel-Alyptus/TP-Hyper-V/blob/main/assets/Gestion%20des%20Machines%20Virtuelles/Configurez%20une%20tâche%20de%20sauvegarde%20pour%20la%20machine%20virtuelle/8-5.png?raw=true)
 
 **Sélectionnez la VM que vous souhaitez sauvegarder.**
-![8-6]https://github.com/Tiriel-Alyptus/TP-Hyper-V/blob/main(/assets/Gestion%20des%20Machines%20Virtuelles/Configurez%20une%20tâche%20de%20sauvegarde%20pour%20la%20machine%20virtuelle/8-6.png?raw=true)
+![8-6](https://github.com/Tiriel-Alyptus/TP-Hyper-V/blob/main(/assets/Gestion%20des%20Machines%20Virtuelles/Configurez%20une%20tâche%20de%20sauvegarde%20pour%20la%20machine%20virtuelle/8-6.png?raw=true)
 
 **Dans notre cas nous allons sauvegarder la VM sur un dossier partagé se situant sur notre autre Hyperviseur, afin de pouvoir la restaurer sur celui-ci en cas de corruption de notre Hyperviseur principal.**
 **Nous cochons donc *"Sauvegarde sur un dossier réseau partagé"**
